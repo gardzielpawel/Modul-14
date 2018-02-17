@@ -5,25 +5,27 @@ var movies = [
         desc: 'Film o czarodzieju',
         actor: 'Daniel Radcliffe',
         poster: 'http://ocdn.eu/images/pulscms/M2Q7MDMsMCwyZDAsMSwx/21f973867807dbb87dda1f84a988902b.jpg'
-        // poster: src: /
     },
     {
         id: 2,
         title: 'Król Lew',
         desc: 'Film o królu sawanny',
-        actor: 'Cartoon animals'
+        actor: 'Cartoon animals',
+        poster: 'http://1.fwcdn.pl/po/68/78/6878/6927221.3.jpg'
     },
     {
         id: 3,
         title: 'Ojciec chrzestny',
         desc: 'Film o mafii',
-        actor: 'Marlon Brando'
+        actor: 'Marlon Brando',
+        poster: 'https://www.filmfan.pl/obrazki/plakaty/1972/ojciec-chrzestny-1972_20111121183135.jpg'
     },
     {
         id: 4,
         title: 'Forrest Gump',
         desc: 'Film o jakimś kolesiu',
-        actor: 'Tom Hanks'
+        actor: 'Tom Hanks',
+        poster: 'https://www.galeriaplakatu.com/img/product_media/190695_1020_A.jpg'
     }
   ];
 
@@ -32,7 +34,7 @@ var movies = [
         React.createElement('h2', {}, movie.title),
         React.createElement('p', {}, movie.desc),
         React.createElement('p', {}, movie.actor),
-        React.createElement('img', {src:}, movie.poster)
+        React.createElement('img', {src: movie.poster})
       );
   });
 
