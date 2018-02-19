@@ -1,4 +1,5 @@
 var Counter = React.createClass({
+    
     getInitialState: function() {
         return {
             counter: 0
@@ -24,6 +25,31 @@ var Counter = React.createClass({
             React.createElement('span', {}, 'Licznik ' + this.state.counter)
         );
     }
+
+    componentWillMount(); {
+        console.log('WillMount');
+    }
+    componentDidMount(); {
+        console.log('DidMount');
+    }
+    componentWillReceiveProps(); {
+        console.log('WillReceivePropst');
+    }
+    shouldComponentUpdate(); {
+        console.log('componentUpdate')
+            return true;
+    }
+    componentWillUpdate(); {
+        console.log('WillUpdate');
+    }
+    componentDidUpdate(); {
+        console.log('DidUpdate');
+    }
+    componentWillUnmountn(); {
+        console.log('WillUnmount');
+    }
+
+
 });
 
 var element =
