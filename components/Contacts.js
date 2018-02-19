@@ -5,8 +5,9 @@ var Contacts = React.createClass({
   
     render: function() {
       var contacts = this.props.items.map(function(contact) {
-          return 
-            <div Contact item={contact} key={contact.id}></div>
+          return( 
+            <Contact item={contact} key={contact.id}/>
+            )
       });
   
       return (
@@ -17,6 +18,3 @@ var Contacts = React.createClass({
     }
   });
 
-<ul className='contactsList'>
-  {contacts}
-</ul>
