@@ -58,24 +58,25 @@ var movies = [
 
         render: function() {
             return (
-                 React.createElement('li', {key: movie.id},
-                    React.createElement('h2', {}, movie.title),
-                    React.createElement('p', {}, movie.desc),
-                    React.createElement('p', {}, movie.actor),
-                    React.createElement('img', {src: movie.poster})
+                 React.createElement('li', {},
+                    React.createElement(MovieTitle, {title: this.props.movie.title}),
+                    React.createElement(MovieDesc, {desc: this.props.movie.desc}),
+                    React.createElement(MovieActor, {actor: this.props.movie.actor}),
+                    React.createElement(MoviePoster, {poster:this.props.movie.poster})
               )
-            )
-        )}
-    })      
+            );
+        }
+  });
+          
 
 var MovieTitle = React.createClass({
     propTypes: {
-        title: React.PropTypes.object.isRequired,
+        title: React.PropTypes.string.isRequired,
     },
     
     render: function () {
         return (
-            React.createElement('h2', {}, movie.title)
+            React.createElement('h2', {}, this.props.title)
         )
     }
 });
@@ -83,24 +84,24 @@ var MovieTitle = React.createClass({
 
 var MovieDesc = React.createClass({
     propTypes: {
-        desc: React.PropTypes.object.isRequired,
+        desc: React.PropTypes.string.isRequired,
     },
     
     render: function () {
         return (
-            React.createElement('p', {}, movie.desc)
+            React.createElement('p', {}, this.props.desc)
         )
     }
 });
 
 var MovieActor = React.createClass({
     propTypes: {
-        actor: React.PropTypes.object.isRequired,
+        actor: React.PropTypes.string.isRequired,
     },
     
     render: function () {
         return (
-            React.createElement('p', {}, movie.actor)
+            React.createElement('p', {}, this.props.actor)
         )
     }
 });
@@ -112,17 +113,21 @@ var MoviePoster = React.createClass({
     
     render: function () {
         return (
-            React.createElement('img', {src: movie.poster})
+            React.createElement('img', {src: this.props.poster})
         )
     }
 });
 
 var MovieList = React.createClass ({
     propTypes: {
-        list: React.PropTypes.object.isRequired,
+        list: React.PropTypes.array.isRequired,
     },
 
     render: function () {
+        var elements = this.props.movies.map(function(movie) {
+            return React.createElement(Movie, {movie: movie, key: movie.id});
+        });
+
         return (
             React.createElement('li', {key: movie.id})
         )
