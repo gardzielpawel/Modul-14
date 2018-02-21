@@ -24,28 +24,28 @@ var Counter = React.createClass({
             React.createElement('button',{onClick: this.decrement}),
             React.createElement('span', {}, 'Licznik ' + this.state.counter)
         );
-    }
+    },
 
-    componentWillMount(); {
-        console.log('WillMount');
-    }
-    componentDidMount(); {
-        console.log('DidMount');
-    }
-    componentWillReceiveProps(); {
-        console.log('WillReceivePropst');
-    }
-    shouldComponentUpdate(); {
+    componentWillMount() {
+        console.log('WillMount')
+    },
+    componentDidMount() {
+        console.log('DidMount')
+    },
+    componentWillReceiveProps() {
+        console.log('WillReceivePropst')
+    },
+    shouldComponentUpdate() {
         console.log('componentUpdate')
             return true;
-    }
-    componentWillUpdate(); {
-        console.log('WillUpdate');
-    }
-    componentDidUpdate(); {
-        console.log('DidUpdate');
-    }
-    componentWillUnmountn(); {
+    },
+    componentWillUpdate() {
+        console.log('WillUpdate')
+    },
+    componentDidUpdate() {
+        console.log('DidUpdate')
+    },
+    componentWillUnmountn() {
         console.log('WillUnmount');
     }
 
